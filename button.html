@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///home/diogo/jogo/calculadora.html -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page </title>
+</head>
+<body>
+    <input type="checkbox" id="darkmode-toggle">
+    <label for="darkmode-toggle"></label>
+    <div class="background"></div> 
+    
+   <header>
+    
+
+
+   </header>
+<style>
+   .button {
+    font-size: medium;
+    color: black;
+    font-style: initial;
+    display: inline;
+    font-style: inherit;
+    width: 50px;
+    height: 60px;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    color: grey;
+}
+
+body {
+    margin: 0%;
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 500px;
+    height: 200px;
+    position: relative;
+    display: block;
+    background: #ebebee;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+label::after {
+    content: "";
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+
+}
+</style>
+    <script>
+     let mood = "light"
+     console.log(mood)
+     mood = "dark"
+     
+     mood = "dark"
+     console.log(mood)
+    </script>
+
+</body></html>
