@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+        }
+        p {
+            font-size: x-large;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .textbox {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button:active {
+            background-color: #003f7f;
+        }
+        label {
+            width: 150px;
+            height: 60px;
+            position: relative;
+            display: block;
+            background: #ebebeb;
+            border-radius: 30px;
+            box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+            cursor: pointer;
+        }
+        label:after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: linear-gradient(180deg, #ffcc89, #d8860b);
+            border-radius: 50px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+        }
+
+        /*codigo das textbox e botoes*/
+
+        input[type="checkbox"] {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+        input[type="checkbox"]:checked + label {
+            background: #242424;
+        }
+        input[type="checkbox"]:checked + label:after {
+            left: 135px;
+            transform: translateX(-100%);
+            background: linear-gradient(180deg, #777, #3a3a3a);
+        }
+        label, label:after {
+            transition: 0.3s;
+        }
+        label:active:after { 
+            width: 70px; 
+        }
+
+        /*fundo da app*/
+        .background {
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: -1;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        /*junção de ambos*/
+        input[type="checkbox"]:checked + label + .background {
+            background: #242424;
+        }
+        label svg {
+            position: absolute;
+            width: 30px;
+            top: 15px;
+            z-index: 100;
+        }
+
+        <!-- botao de forma a trocar o funco de branco para preto-->
+        label svg.sun {
+            left: 10px;
+            fill: #fff;
+            transition: 0.3s;
+        }
+        label svg.moon {
+            left: 110px;
+            fill: #7e7e7e;
+            transition: 0.3s;
+        }
+        input[type="checkbox"]:checked + label svg.sun {
+            fill: #7e7e7e;
+        }
+        input[type="checkbox"]:checked + label svg.moon {
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- criação dos botoes textbox e do botao de tema-->
+    <div class="content">
+        <p>Página de Login</p>
+        <h1>Insira o seu email e palavra-passe para iniciar sessão</h1>
+        <div class="input-container">
+            <input type="text" name="textbox1" class="textbox" placeholder="Escreva o seu email">
+        </div>
+        <div class="input-container">
+            <input type="password" name="textbox2" class="textbox" placeholder="Escreva a sua palavra-passe">
+        </div>
+        <div class="button" onclick="buttonclicker()">Iniciar Sessão</div>
+    </div>
+
+    <input type="checkbox" id="darkmode-toggle">
+    <label for="darkmode-toggle">
+        <svg version="1.1" class="sun" ...></svg>
+        <svg version="1.1" class="moon" ...></svg>
+    </label>
+    <div class="background"></div>
+
+    <script>
+        // dar função ao butao e ao butao grande do tema 
+        function buttonclicker() {
+            alert("Sessão iniciada");
+        }
+
+        let mood = "light";
+        console.log(mood);
+        mood = "dark";
+        console.log(mood);
+    </script>
+</body>
+</html>
